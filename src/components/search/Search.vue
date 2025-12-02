@@ -212,6 +212,15 @@ export default {
     width: auto;
     min-width: 0;
     font-family: 'Libre Baskerville', serif;
+
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &::-ms-clear {
+      display: none;
+    }
   }
 
   &__results {
