@@ -3,6 +3,12 @@ const WarningsToErrorsPlugin = require('warnings-to-errors-webpack-plugin')
 
 module.exports = {
   productionSourceMap: false,
+  devServer: {
+    watchOptions: {
+      poll: process.env.CHOKIDAR_USEPOLLING === 'true' ? 1000 : false,
+      ignored: /node_modules/
+    }
+  },
   configureWebpack: {
     optimization: {
       noEmitOnErrors: true

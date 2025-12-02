@@ -1,0 +1,20 @@
+version: '3'
+services:
+  roshar-map-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev-serve
+    ports:
+      - "10010:10010"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./translations:/app/translations
+      - ./bin:/app/bin
+    command: yarn serve --host 0.0.0.0
+    environment:
+      - MAP_DEBUG=true
+      - VUE_APP_PUBLIC_URL=/
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+
