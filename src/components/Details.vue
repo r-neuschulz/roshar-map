@@ -125,7 +125,7 @@ export default {
   components: {
     Markdown,
     HelpCircleIcon,
-    XIcon,
+    TwitterIcon,
     CalendarIcon,
     BookIcon,
     Scrollbar,
@@ -433,13 +433,13 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 60px;
+    height: 48px;
     z-index: 62;
     pointer-events: none;
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
     background: linear-gradient(0deg, rgba(#F5ECDA, 1.0) 0, rgba(#F5ECDA, 0) 100%);
-    border-bottom: 1rem solid #F5ECDA;
+    border-bottom: 0.8rem solid #F5ECDA;
   }
 
   &__content {
