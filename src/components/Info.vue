@@ -125,7 +125,7 @@
 
 <script>
 import Scrollbar from 'vuescroll/dist/vuescroll-native'
-import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, YoutubeIcon } from 'vue-feather-icons'
+import { ChevronLeftIcon, ChevronRightIcon, FacebookIcon, GithubIcon, XIcon, YoutubeIcon } from 'vue-feather-icons'
 import Markdown from '@/components/Markdown.vue'
 import availableLanguages from '@/lang/menu.json'
 import { escapeCssPath } from '@/utils'
@@ -138,6 +138,7 @@ export default {
     FacebookIcon,
     YoutubeIcon,
     GithubIcon,
+    XIcon,
     Scrollbar,
     ChevronLeftIcon,
     ChevronRightIcon
