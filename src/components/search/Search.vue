@@ -185,6 +185,7 @@ export default {
     width: 300px;
     min-width: 0;
     z-index: 63;
+    align-items: center;
 
     &-enter-active, &-leave-active {
       transition: all 0.5s ease-in-out;
@@ -335,6 +336,35 @@ export default {
         left: var(--left);
         right: var(--right);
       }
+    }
+  }
+}
+
+[lang="al-wo"] .search {
+  min-height: auto;
+
+  &:before {
+    min-height: auto;
+  }
+
+  &__content {
+    align-items: stretch;
+    min-height: auto;
+    line-height: 5;
+  }
+
+  &__field {
+    font-family: 'AlethiTS Lined', serif;
+    line-height: 5;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: auto;
+    min-height: calc(1rem + 1em * 5 + 1rem); // padding-top + line-height * font-size + padding-bottom
+
+    &::placeholder {
+      line-height: 5;
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 }

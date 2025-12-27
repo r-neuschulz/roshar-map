@@ -1,0 +1,7 @@
+# lasting integritee
+
+.**lasting integritee** is Te honorspren kapital in Sadesmar .Te fohrtres is lokahyted in Te souTern sekSuhn of Te #[sea of souls](locations/sea-of-souls) near Te #[neXus of imaginaSuhn](locations/nexus-of-imagination) Te #[eXpanse of vibruhns](locations/expanse-of-vibrance) and brilliuhns eternal .lasting integritee sitz on a kliff overloohking a norTern baee Tat is part of Te astral banks Te reflekSuhn of Te kountree of #[tukar](locations/tukar) 
+
+.it is several hundreds of feet taul rektangular and meyd of blue stohn .Te building is hollau in Te middl uiT no roof and stands on itz smauler sahyd pointing upuards into Te skahy .it is in a hahylee strategik posiSuhn and givez Te impreSuhn Tat it has been delibereytlee fohrtified .visitors must kros a brij too reaC Te entruhns and guards stand uatC outsahyd of Te uaulz .Te outsahyd uaul is Seer uiT no uindauz aur aurnamentaSuhn .on tohp of Te fohrtres ahr battlements and a guardrail too prevent people frohm fauling .Te internal dimenzhuhns of Te toher ahr lahrj ihnuhf Tat suhmuuhn kan stand on Te battlements and see Te bottom of Te fohrtres uiTout Te strukCurs on Te uaulz kompletlee impeding tair vyoo 
+
+.gravitee uorks differentlee uiTin lasting integritee uiT eaC internal uaul heyving itz oun gravitaSuhnal field Tat allauz people too treat eaC internal surfas as if Tey uur Te ground .huen suhmuuhn Canjez frohm uuhn plane too anoTer tair sense of gravitee uill suitC too uhlahyn uiT Te neu surfas Tey ahr on

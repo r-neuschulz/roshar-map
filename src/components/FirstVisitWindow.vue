@@ -189,4 +189,18 @@ export default {
     }
   }
 }
+
+[lang="al-wo"] .first-visit-window {
+  &__heading {
+    font-variant: normal;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__text {
+    line-height: 3;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
 </style>

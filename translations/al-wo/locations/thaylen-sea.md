@@ -1,0 +1,3 @@
+# Taylen sea
+
+.Te **Taylen sea** is a lokaSuhn souT of Te #[sea of lost lahyts](locations/sea-of-lost-lights) in Sadesmar Te subastral of roSar .in Te fysikal realm Te sea korresponds too Te island of #[Taylenah](locations/thaylenah) .Te Taylen sea is norT of Te neXus of imaginaSuhn .it is veree klohz too Te #[glasueyter deep](locations/glasswater-deep) and #[luminous Sallauz](locations/luminous-shallows) of Te sea of lost lahyts alToh no direkt uateruays ahr visuhbuhl in Te availuhbuhl mapz .nazh marked Te lokaSuhn of #[Taylen sitee oaTgeyt](locations/thaylen-city-oathgate) on Te ej of Te sea norTuest of Te oaTgeyt Tair is a leyk huiC nazh heytez .Te leyk korresponds too an island in #[longbrauz straitz](locations/longbrows-straits) in Te fysikal realm

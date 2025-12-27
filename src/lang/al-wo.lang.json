@@ -1,0 +1,299 @@
+{
+    "texture-locale": "en-US",
+    "text-direction": "ltr",
+    "search-language": "en-US",
+    "name": "Alethi",
+    "title": "paij  Te stormlahyt arCiv",
+    "logo": ".roSarpng",
+    "ui": {
+        "loading": "loeyding",
+        "circa": ".ka deyt",
+        "menu": "menu",
+        "settings": "settingz",
+        "layers": "layers",
+        "filters": "filters",
+        "close": "klohz",
+        "back": "bak",
+        "separate-timelines": "separeyt timelahynez",
+        "add-timeline": ".add a timelahyn bahy kliking timelahyn ikon too kompair",
+        "enable": "enuhbuhl",
+        "disable": "disuhbuhl",
+        "display-separately": "displaee separeytlee",
+        "stop-display-separately": "no lonjer displaee separeytlee",
+        "previous-event": "previous event",
+        "next-event": "neXt event",
+        "previous": "previous",
+        "next": "neXt",
+        "jump-to-start": "jump too start",
+        "jump-to-end": "jump too end",
+        "coppermind": "mohr on Te kuhpermind",
+        "welcome": ".uelkuhm too Te unoffiSul interaktiv map and timelahyn of brandon sandersonz Te stormlahyt arCiv series of books",
+        "language": "languaij",
+        "languageHeading": "languaij selekSuhn",
+        "help": "help",
+        "about": "uhbout",
+        "aboutText": ".uelkuhm too our interaktiv map and timelahyn of roSar\r\n\r\n.Tis uebsahyt allauz you too eXplohr Te map of roSar and Te timelahyn of brandon sandersonz stormlahyt arCiv series .kliking lokaSuhns on Te map uill reveal details uhbout it as uell as releyted events and Carakters .brousing Te timelahyn at Te bottom of Te paij allauz you too jump betueen different events on Te map and ohpen up mohr informaSuhn uhbout Tohz events .if you uant too knau even mohr links too Te kuhpermind uiki ahr provahyded\r\n\r\n.Tis is a fan meyd projekt Tat is not affilieyted uiT dragonsteel entertainment .aul deytez and lokaSuhns ahr beysed on a kombinaSuhn of in uorld referensez and our oun estimeytez and uhsumpSuhns .if you uould lahyk too dig furTer into Te timelahyn of Te series aur if you ahr kurious uhbout Te referensez and uhsumpSuhns yoozed pleeez visit jofuuz stormlahyt arCiv timelahyn projekt<safe>https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0</safe>\r\n\r\n.meyk sure you Cek out Te tutorial if you havnt duhn so .ue hohp Tat you find Tis too bee a fun insahytful and helpful tool as you reed Te stormlahyt arCiv",
+        "brandon-sanderson": "brandon sanderson",
+        "credits": "kreditz",
+        "map-credits": "map art bahy spenser farnes stoneuard",
+        "more": "mohr",
+        "related": "releyted",
+        "date": "deyt",
+        "date-help": ".hau too reed Tis",
+        "chapter": "Capter",
+        "dismiss": "dismis",
+        "first-visit": {
+            "heading": "uelkuhm",
+            "intro": ".spoahylerz up too Te end of daunSard and rhyTm of uar ahed .kontinue at your oun risk\r\n\r\n.it looks lahyk Tis is your furst yooz of Tis ap .uould you lahyk suhm help\r\n\r\n.you kan aluays find help leyter on frohm Te menu too Te tohp rahyt",
+            "calendar": "eXplain deytez",
+            "tutorial": "Sau hints"
+        },
+        "tutorial": {
+            "title": "tutorial",
+            "explanation": ".klik on anee of Te red dots too find out huat you kan do uiT Te ap",
+            "calendar": "eXplain kalendar  deytez",
+            "hints": {
+                "settings-button": {
+                    "title": "settingz menu",
+                    "text": "adjust displaee  filter settingz fohr Te map and timelahyn"
+                },
+                "menu-button": {
+                    "title": "menu",
+                    "text": "find helpful links and languaij settingz"
+                },
+                "search": {
+                    "title": "searC",
+                    "text": "searC fohr events Carakters lokaSuhns and mohr"
+                },
+                "timeline": {
+                    "title": "timelahyn",
+                    "text": "navigeyt Tis timelahyn bahy skrubbing aur skrolling and klik on anee of Te diamonds too vyoo Te uhsoSeeeyted event"
+                },
+                "event": {
+                    "title": "event details",
+                    "text": "klik Te mohr link too get a detaahyled summaree releyted informaSuhn and huair too find Te event in Te book if apuhlikuhbuhl"
+                },
+                "location": {
+                    "title": "lokaSuhn details",
+                    "text": "klik on anee neymed lokaSuhn too vyoo a detaahyled deskripSuhn and uhsoSeeeyted informaSuhn"
+                },
+                "settings-layers": {
+                    "title": "layers",
+                    "text": ".layers kan provahyd addiSuhnal useful informaSuhn on tohp of Te map vyoo Tey kan bee togguhled at anee tahym"
+                },
+                "settings-filters": {
+                    "title": "filters",
+                    "text": ".filters allau you too desahyd huiC events ahr displayed on Te timelahyn you maee hahyd Tem kompletlee aur kreeyt a separeyt timelahyn Tat foseeoozez on Te filtered item"
+                },
+                "settings-separate-timelines": {
+                    "title": "separeyt timelahynez",
+                    "text": ".uuhns youv started displaying a filter as separeyt timelahyn you kan find it labeled heer yooz Te drag handl too Canj Te aurder Te timelahynez ahr displayed in"
+                },
+                "measure-button": {
+                    "title": "measurements",
+                    "text": "measure distuhnsez on Te map and get eXakt koordineytez fohr lokaSuhns"
+                },
+                "go-to-date-button": {
+                    "title": "go too deyt",
+                    "text": "jump too an arbitraree deyt on Te timelahyn"
+                }
+            }
+        },
+        "calendar-guide": {
+            "title": "Te roSaran kalendar",
+            "start": {
+                "name": "start",
+                "explanation": ".Tis is uuhn year in Te roSaran kalendar .it korresponds too  .years on earT"
+            },
+            "day": {
+                "name": "daee",
+                "explanation": ".eaC daee is  roSaran hours long"
+            },
+            "week": {
+                "name": "ueek",
+                "explanation": ".eaC ueek is  days long"
+            },
+            "month": {
+                "name": "monT",
+                "explanation": ".eaC monT spans  days aur  ueeks"
+            },
+            "year": {
+                "name": "year",
+                "explanation": ".a year amounts too  monTs  ueeks aur  days"
+            },
+            "date": {
+                "name": "deytez",
+                "explanation": ".deytez ahr uritten as Te year furst monT sekond ueek Tird and daee last .Te numbers ahr separeyted bahy periods\r\n\r\nfohr eXample Tis deyt in year  is uritten deyt"
+            }
+        },
+        "error-screen": {
+            "message": "huoohpz .looks lahyk Te ap kannot bee loeyded in your brouser fohr suhm reason\r\n\r\n.pleeez konsahyder visahyting yoozing a modern brouser<safe>https://browsehappy.com</safe>",
+            "report-intro": ".Tink Tis is an akCual error",
+            "report-button": "report on giTub"
+        },
+        "translatorNote": {
+            "abbreviation": "tn",
+            "full": "translatorz note"
+        },
+        "go-to-date": {
+            "heading": "go too deyt",
+            "fields": {
+                "year": {
+                    "label": "year",
+                    "placeholder": "yyyee"
+                },
+                "month": {
+                    "label": "monT",
+                    "placeholder": "mm"
+                },
+                "week": {
+                    "label": "ueek",
+                    "placeholder": "uu"
+                },
+                "day": {
+                    "label": "daee",
+                    "placeholder": "dd"
+                }
+            },
+            "errors": {
+                "year-required": ".you must fill out Te year",
+                "month-required": ".you must fill out Te monT",
+                "week-required": ".you must fill out Te ueek"
+            }
+        },
+        "lock-timeline": "lok navigaSuhn too timelahyn",
+        "unlock-timeline": "unlok navigaSuhn",
+        "translation-by": "translaSuhn bahy",
+        "image-credits": "bahy kreditz",
+        "share": "Sair",
+        "measurement": {
+            "button": "measure distuhnsez",
+            "title": "measurement",
+            "explanation": ".klik anee too points too kalkuleyt tair posiSuhns and Te distuhns betueen Tem\r\n\r\n.on desktohp ktrl klik too add multiple points\r\n\r\n.on mobahyl long pres too add multiple points\r\n\r\n.note Tat Te roSaran degree  ranjez frohm  too",
+            "labels": {
+                "start": "start",
+                "end": "end",
+                "distance": "distuhns"
+            },
+            "coordinates": {
+                "full": "latitude longitude",
+                "north": "degrees n",
+                "south": "degrees s",
+                "east": "degrees e",
+                "west": "degrees u"
+            },
+            "distance": "distansemi midistansekm km"
+        },
+        "search": {
+            "title": "searC",
+            "prompt": "",
+            "loading": ".searC uill bee readee Sortlee",
+            "empty-query": "enter your searC terms above fohr results too uhpeer heer",
+            "no-results": "unfortuneytlee ue kouldnt find anyTing fohr Tohz searC terms"
+        }
+    },
+    "sharing": {
+        "title": "Sair",
+        "global-message": ".Cek out Te interaktiv map  timelahyn of roSar",
+        "general": {
+            "button-text": "mohr",
+            "copied": ".kopahyed",
+            "entry-template": ".Cek out entree on Te interaktiv map  timelahyn of roSar"
+        },
+        "twitter": {
+            "button-text": "tuitterX",
+            "entry-template": ".Cek out entree on Te interaktiv map  timelahyn of roSar"
+        },
+        "instagram": {
+            "button-text": "instagram",
+            "entry-template": ".Cek out entree on Te interaktiv map  timelahyn of roSar"
+        },
+        "facebook": {
+            "button-text": "feysbook"
+        },
+        "reddit": {
+            "button-text": "reddit",
+            "entry-template": ".Cek out entree on Te interaktiv map  timelahyn of roSar"
+        },
+        "tumblr": {
+            "button-text": "tumblr",
+            "entry-template": ".Cek out entree on Te interaktiv map  timelahyn of roSar"
+        },
+        "more": {
+            "button-text": "mohr",
+            "entry-template": ".Cek out entree on Te interaktiv map  timelahyn of roSar"
+        }
+    },
+    "entry-types": {
+        "events": "events",
+        "locations": "lokaSuhns",
+        "characters": "Carakters",
+        "misc": "misellaneous"
+    },
+    "numbers": [
+        "jes",
+        "nan",
+        "CaC",
+        "vev",
+        "palah",
+        "SaS",
+        "betab",
+        "kak",
+        "tanat",
+        "iSi"
+    ],
+    "layers": {
+        "shadesmar": "Sadesmar",
+        "graticule": "lahynez of latitude and longitude",
+        "silverKingdoms": "silver kingdoms",
+        "oathgates": "oaTgeyt lokaSuhns",
+        "factions": "kurrent steyt of Te uorld"
+    },
+    "factions": {
+        "coalition": {
+            "name": "dalinarz koaliSuhn of monarCs",
+            "style": "blue and maroon Cekered"
+        },
+        "odium": {
+            "name": "odiumz fohrseez",
+            "style": "gold"
+        },
+        "neutral": {
+            "name": "neutral",
+            "style": "green"
+        }
+    },
+    "tagCategories": {
+        "tags": "tags",
+        "characters": "Carakters",
+        "books": "books"
+    },
+    "tags": {
+        "general": "general",
+        "dalinar": "dalinar",
+        "kaladin": "kaladin",
+        "shallan": "Sallan",
+        "twok": "Te uaee of kingz",
+        "wor": "uords of radiuhns",
+        "ed": "edgedahnser",
+        "ob": "oaTbringer",
+        "ds": "daunSard",
+        "row": "rhyTm of uar",
+        "adolin": "adolin",
+        "renarin": "renarin",
+        "lift": "lift",
+        "szeth": "szeT",
+        "rysn": "rysn",
+        "jasnah": "jasnah",
+        "navani": "navani",
+        "eshonai": "eSonai",
+        "taravangian": "taravangian",
+        "wit": "uit",
+        "moash": "moaS",
+        "venli": "venli",
+        "history": "historee",
+        "diagram": "Te diagram",
+        "ghostbloods": "Te gohstbloods"
+    },
+    "changelog": "Welcome to the updated Map & Timeline of Roshar! We've added all events, locations, and characters from both *Dawnshard* and *Rhythm of War*, so if you have not read those titles yet, be careful!\n\n## What's new?\n\nBesides all the current book content, we've been hard at work on new features and general improvements to the map and timeline. Here are the most memorable ones:\n\n * 🔎 **Search:** You can now search events, locations, characters, and more! This feature can be found in the top-right corner next to the settings menu button. \n * 📐 **Measurements:** We consulted the royal cartographer Isasik Shulin and did the math! Accessible from the compass-looking button to the top right of the timeline, you may now measure distances across Roshar and get coordinates for any location on the continent. As a bonus, the graticule we draw on the map should now be more accurate, too!<br>*Note that measurements are based on our own research and might not be entirely accurate.*\n * ⚠️ **Spoiler Filters:** The book filters, under settings, have been reworked to act as spoiler filters! You can now disable events for any books you haven't read, preventing them from appearing on the timeline.<br>*Note that those events will still appear under 'Related Events' on the detailed view of locations or characters, however.*\n * 🤝 **Sharing:** While we don't exactly have Spanreed technology, there now are easily accessible sharing buttons in the details views of everything you can view on the map and timeline! Twitter, Facebook, Reddit, and Tumblr are supported by default, but on supported devices such phones, you can use any available sharing option.\n * 📍 **Updated Shadesmar Map:** We found a perpendicularity and had the chance to explore Roshar's Cognitive subastral! The map of Shadesmar has been updated with some of the locations we know so far.\n\nIf you find any issues or errors with any of these changes, feel free to let us know in our [feedback thread](https://www.17thshard.com/forum/topic/92801-interactive-map-and-timeline-of-roshar-feedback/) or with a [GitHub issue](https://github.com/Palanaeum/roshar-map/issues)!\n\nHave fun exploring this updated experience!"
+}

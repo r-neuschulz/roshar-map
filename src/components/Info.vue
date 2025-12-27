@@ -537,4 +537,25 @@ export default {
     margin-top: 0.5rem
   }
 }
+
+[lang="al-wo"] .info {
+  &__back, &__close {
+    line-height: 3; // 1 * 3
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__text {
+    line-height: 5.25; // 1.75 * 3
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__menu {
+    font-variant: normal;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
 </style>

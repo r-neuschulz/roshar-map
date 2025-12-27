@@ -1,0 +1,5 @@
+# souTern depTs
+
+.Te **souTern depTs** is Te oSuhn too Te souT of roSar .it lies off Te koast of #[tukar](locations/tukar) #[marat](locations/marat) and #[Taylenah](locations/thaylenah) .it is presumuhbuhle kuahyt deep .it also lahyklee eXtends too Te souT pohl of Te planet
+
+.it uas said if uuhn kontrols #[Taylenah](locations/thaylenah) and #[Taylen sitee](locations/thaylen-city) uuhn kould kontrol Te entahyuhr souTern depTs .Tis strategik importuhns led too voidbringer fohrseez too Taylen sitee near Te beginning of Te troo desolaSuhn .a Taylen merCant Sip tried too skout fohr voidbringerz in Te souTern depTs near marat and spotted a lahrj number of Sips at dok along Te koast .Te Sip relayed Te informaSuhn via spanreed .Ten figures uiT glauing eyesTe fusedrohz frohm a nearbee sitee attaking Te Sip and Te Sip uas never seen frohm again .Sortlee Tereafter Te voidbringer fohrseez launCed frohm marat too Taylen sitee yoozing Te everstorm too propel Tem kuiklee akros Te souTern depTs triggering Te batl of Taylen fields

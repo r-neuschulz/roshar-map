@@ -1,0 +1,3 @@
+# sea of aurakles
+
+.Te **sea of aurakles** is a region of Te #[sea of lost lahyts](locations/sea-of-lost-lights) .it is norT of #[selebrant](locations/celebrant) emberdark and Te burning gardens .too Te souT it is bordered uiT Te #[glasueyter deep](locations/glasswater-deep) .Te #[salavaSi trenC](locations/salavashi-trench) is a porSuhn of Te sea of aurakles .in Te fysikal realm Te sea of aurakles korresponds too at least parts of #[aleTkar](locations/alethkar) norT of Te deaTbend river .it is also norT of Te #[tarat sea](locations/tarat-sea) so it seems Te sea of aurakles goes into #[jah keeved](locations/jah-keved) .Te seaz uestern boundaree is unklear

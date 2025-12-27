@@ -5,10 +5,11 @@
   "scripts": {
     "serve": "yarn dev",
     "dev": "cross-env MAP_DEBUG=true vite --mode dev --port 10010",
-    "build": "vite build",
+    "build": "yarn generate:al-wo && vite build",
     "build:dev": "cross-env MAP_DEBUG=true vite build --mode dev",
     "preview": "vite preview --port 10010",
     "lint": "eslint .",
+    "generate:al-wo": "node ./bin/generate-al-wo.js",
     "dumpTranslations": "node ./bin/dump-translations.js",
     "validateTranslations": "node ./bin/validate-translations.js",
     "convertTextures": "node ./bin/convert-textures.js"

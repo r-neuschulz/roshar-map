@@ -67,6 +67,7 @@ import ErrorScreen from '@/components/ErrorScreen.vue'
 import Changelog, { VERSION as CHANGELOG_VERSION } from '@/components/Changelog.vue'
 import '@/assets/fonts/baskerville.scss'
 import '@/assets/fonts/hebrew.scss'
+import '@/assets/fonts/alethi.scss'
 import Search from '@/components/search/Search.vue'
 import { mapActions, mapState } from 'pinia'
 import { useMainStore } from '@/stores/main'
@@ -266,7 +267,7 @@ body {
       left: 2rem;
     }
 
-    &-button {
+      &-button {
       display: flex;
       align-items: center;
       position: relative;
@@ -324,6 +325,27 @@ body {
 
 button {
   font-family: 'Libre Baskerville', serif;
+}
+
+[lang="al-wo"] #app {
+  font-family: 'AlethiTS Lined', serif;
+  line-height: 3;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+[lang="al-wo"] button {
+  font-family: 'AlethiTS Lined', serif;
+  line-height: 3;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+[lang="al-wo"] #app .app__actions-button--wide {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .loading__fade {

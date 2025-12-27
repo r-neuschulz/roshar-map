@@ -117,6 +117,7 @@ The following is a list of all the artists that are either official artists or h
  * [Xabi Gazte](https://coppermind.net/wiki/Coppermind:Artists/Xabi_Gazte)
  * [Yen Shu Liao](https://coppermind.net/wiki/Coppermind:Artists/Yen_Shu_Liao)
  * [Zamoraalma](https://www.artstation.com/Zamoraalma)
+ * [Kurkistan](https://www.17thshard.com/profile/1018-kurkistan)
 
 A very special thanks goes out to Reddit user [Stoneward13](https://www.reddit.com/user/Stoneward13) for letting us use and modify his awesome high resolution versions of the Roshar and Shadesmar maps.
 

@@ -504,4 +504,20 @@ export default {
     }
   }
 }
+
+[lang="al-wo"] .tutorial {
+  &__window-text {
+    h2 {
+      font-variant: normal;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  &__window, &__details {
+    line-height: 3;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
 </style>

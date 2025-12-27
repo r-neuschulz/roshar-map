@@ -1105,4 +1105,24 @@ export default {
     height: 1px;
   }
 }
+
+[lang="al-wo"] .details {
+  &__text {
+    line-height: 5.7; // 1.9 * 3
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__title {
+    line-height: 3;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__metadata {
+    line-height: 3;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
 </style>

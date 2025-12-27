@@ -1,0 +1,5 @@
+# jasnah kholin
+
+> .it strikes me Tat religionin itz esenseseeks too teyk natural events and askribe supernatural kauzs too Tem .ahy houever seek too teyk supernatural events and find Te natural meaningz behind Tem .perhapz Tat is Te final divahyding lahyn betueen sahyens and religion .ohposahyt sahydez of a kard
+
+.**jasnah kholin** is Te kueen of #[aleTkar](locations/alethkar) on roSar .Se is a surgebinder and elsekauler uiT akses too Te surjez of transformaSuhn and transportaSuhn suhmtahymez kauled elsekauling .Se is Te sister of Te leyt king #[elhokar](characters/elhokar) daugter of Te leyt king #[gavilar](characters/gavilar) and #[navani](characters/navani) nies of hahyprins #[dalinar](characters/dalinar) aunt of royal air gavinor and kousin too #[adolin](characters/adolin) and #[renarin](characters/renarin) .Se is knoun uahydlee as a brilliant sColar and fohr her denunsiaSuhn of vorinism .Se is a member of Te veristitalians an aurder of historians dedikahyted too rekonstrukting unbieezed and fakCual uhkounts of Te past in aurder too better understand Te present .Se is traahyning #[Sallan davar](characters/shallan) as her uard

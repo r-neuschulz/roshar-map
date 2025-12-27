@@ -1,0 +1,3 @@
+# Te radiant depTs
+
+.Te **radiant depTs** is a trenC in Te #[sea of souls](locations/sea-of-souls) part of Te roSaran subastral of Te kognitiv realm .it is souT of #[nohadonz stairuays](locations/nohadons-stairways) and is lahyklee neymed after Te knahyts radiant .it is east of a peninsula huair Te lahyToyooz abahyding lahyt is lokahyted and norT of #[nameles](locations/nameless) .in tair eXpediSuhn too lasting integritee #[Sallan](characters/shallan) and #[adolin](characters/adolin) travel Trou Te radiant depTs too reaC nameles .Te radiant depTs korrespond at least too #[marat](locations/marat) in Te fysikal realm and posiblee oTer naSuhns too Te east

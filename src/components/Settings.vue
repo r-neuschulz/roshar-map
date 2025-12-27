@@ -489,4 +489,12 @@ export default {
     }
   }
 }
+
+[lang="al-wo"] .settings {
+  &__content {
+    line-height: 3;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
 </style>
