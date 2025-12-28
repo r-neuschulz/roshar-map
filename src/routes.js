@@ -81,6 +81,12 @@ router.afterEach((to, from) => {
   const newLocale = to.params.locale
 
   if (oldLocale !== undefined) {
+    // Reload if switching to or from Alethi (al-wo) to ensure font changes apply
+    if (oldLocale === 'al-wo' || newLocale === 'al-wo') {
+      location.reload()
+      return
+    }
+
     const oldTextureLocale = i18n.global.getLocaleMessage(oldLocale)?.['texture-locale']
     const newTextureLocale = i18n.global.getLocaleMessage(newLocale)?.['texture-locale']
 

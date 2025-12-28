@@ -469,9 +469,17 @@ export default {
       background-position: 50% 100%;
       background-size: 0 3px;
       transition: background-size 0.2s ease-in-out;
+      font-family: 'Libre Baskerville', 'Hadasim CLM', 'Merriweather', serif;
 
       &:hover, &:active, &:focus, .info__menu-item--active {
         background-size: 100% 3px;
+      }
+
+      &[href*="/al-wo"] {
+        line-height: 5;
+        font-weight: bold;
+        font-variant: normal;
+        font-family: 'AlethiTS Lined', serif;
       }
     }
   }
