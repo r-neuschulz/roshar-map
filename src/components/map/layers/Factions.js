@@ -18,6 +18,12 @@ export default class Factions extends Group {
     this.init(texture)
   }
 
+  setTexture (texture) {
+    if (this.plane) {
+      this.plane.material.uniforms.Texture.value = texture
+    }
+  }
+
   init (texture) {
     const geo = new PlaneGeometry(2, 2, 1, 1)
     const mat = new ShaderMaterial({

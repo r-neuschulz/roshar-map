@@ -23,7 +23,17 @@ export default class SilverKingdoms extends Group {
 
     this.dimming = true
 
-    this.init(textures)
+    this.init(textures || {})
+  }
+
+  setTextures (textures) {
+    if (this.bordersPlane) {
+      this.bordersPlane.material.uniforms.Texture.value = textures.silver_kingdoms
+    }
+
+    if (this.textPlane) {
+      this.textPlane.material.uniforms.Texture.value = textures.silver_kingdoms_text
+    }
   }
 
   /**

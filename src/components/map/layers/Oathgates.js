@@ -17,7 +17,13 @@ export default class Oathgates extends Group {
 
     this.dimming = true
 
-    this.init(textures)
+    this.init(textures || {})
+  }
+
+  setTextures (textures) {
+    if (this.textPlane) {
+      this.textPlane.material.uniforms.Texture.value = textures.oathgates_text
+    }
   }
 
   init (textures) {

@@ -1,6 +1,7 @@
 import isMobile from 'is-mobile'
 import { LinearFilter, RGBAFormat, TextureLoader, WebGLUtils } from 'three'
 import { DDSLoader } from 'three/examples/jsm/loaders/DDSLoader'
+import TextureWorker from '@/workers/texture-worker.js?worker'
 
 const textureUrls = import.meta.glob('/src/assets/textures/**/*', {
   eager: true,
@@ -86,6 +87,7 @@ export default class TextureManager {
    * @returns {Promise<object>} - Promise resolving to the loaded textures map.
    */
   load (textures) {
+    console.time('TextureManager: load')
     const result = {}
 
     const textureLoader = new TextureLoader()
@@ -117,6 +119,7 @@ export default class TextureManager {
             result[name] = data
 
             if (Object.keys(textures).every(t => textures[t].loaded === true)) {
+              console.timeEnd('TextureManager: load')
               resolve(result)
             }
           },
@@ -137,6 +140,7 @@ export default class TextureManager {
    * @returns {Promise<{width: number, height: number, data: Uint8ClampedArray|Array}>} - The loaded data.
    */
   loadData (name, hqAvailable, localized, lossy, channelsToKeep) {
+    console.time(`TextureManager: loadData(${name})`)
     const channels = {}
     channelsToKeep.split('').forEach((c) => {
       channels[c] = channelsToKeep.indexOf(c)
@@ -148,6 +152,7 @@ export default class TextureManager {
       const image = new Image()
 
       image.onload = () => {
+        console.time(`TextureManager: loadData(${name}) - Processing`)
         const canvas = document.createElement('canvas')
         canvas.width = image.width
         canvas.height = image.height
@@ -159,26 +164,21 @@ export default class TextureManager {
 
         canvas.remove()
 
-        const data = channelNames.length < 4 ? new Array(channelNames.length * raw.width * raw.height) : raw.data
-
-        if (channelNames.length < 4) {
-          for (let i = 0; i < raw.data.length / 4; i++) {
-            if (channels.r !== undefined) {
-              data[i * channelNames.length + channels.r] = raw.data[i * 4]
-            }
-            if (channels.g !== undefined) {
-              data[i * channelNames.length + channels.g] = raw.data[i * 4 + 1]
-            }
-            if (channels.b !== undefined) {
-              data[i * channelNames.length + channels.b] = raw.data[i * 4 + 2]
-            }
-            if (channels.a !== undefined) {
-              data[i * channelNames.length + channels.a] = raw.data[i * 4 + 3]
-            }
-          }
+        const worker = new TextureWorker()
+        worker.onmessage = (e) => {
+          console.timeEnd(`TextureManager: loadData(${name}) - Processing`)
+          console.timeEnd(`TextureManager: loadData(${name})`)
+          resolve({ width: e.data.width, height: e.data.height, data: new Uint8ClampedArray(e.data.buffer) })
+          worker.terminate()
         }
 
-        resolve({ width: raw.width, height: raw.height, data })
+        worker.postMessage({
+          buffer: raw.data.buffer,
+          width: raw.width,
+          height: raw.height,
+          channelNames,
+          channels
+        }, [raw.data.buffer])
       }
 
       image.onerror = errorEvent => reject(new Error(`Could not load texture '${name}': ${errorEvent.message}`))

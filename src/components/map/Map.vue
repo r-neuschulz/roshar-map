@@ -76,11 +76,14 @@ export default {
       dimmingProgress: 0,
       dimmingProgressDirection: 0,
       layers: {},
+      textures: {},
+      loadedLayers: {},
       tutorialReferencePosition: {
         x: 0,
         y: 0
       },
-      measurementResult: null
+      measurementResult: null,
+      firstRender: true
     }
   },
   computed: {
@@ -147,9 +150,16 @@ export default {
       })
     }
 
+    console.time('Map: Total Init')
+    console.time('Map: loadTextures')
     this.loadTextures()
-      .then(this.setupScene)
+      .then((textures) => {
+        console.timeEnd('Map: loadTextures')
+        return this.setupScene(textures)
+      })
       .then(() => {
+        console.timeEnd('Map: Total Init')
+
         this.$el.prepend(this.renderer.domElement)
 
         Object.keys(this.layers).forEach((layer) => {
@@ -186,20 +196,57 @@ export default {
       const textures = {
         map_bg: { hqAvailable: true, lossy: true, compressedPixelFormat: RGB_S3TC_DXT1_Format },
         map: { hqAvailable: true },
-        shadesmar_map_bg: { lossy: true, compressedPixelFormat: RGB_S3TC_DXT1_Format },
         transition: { pixelFormat: RedFormat },
         text_pattern: { pixelFormat: RedFormat },
-        map_text: { hqAvailable: true, localized: true },
-        shadesmar_map_text: { hqAvailable: true, localized: true },
-        factions: { hqAvailable: true, lossy: true },
-        oathgates_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat },
-        silver_kingdoms: { hqAvailable: true, pixelFormat: RedFormat },
-        silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat }
+        map_text: { hqAvailable: true, localized: true }
       }
 
       return this.textureManager.load(textures)
     },
+    async loadLayerAssets (layer) {
+      if (this.loadedLayers[layer]) {
+        return
+      }
+
+      this.loadedLayers[layer] = true
+
+      let newTextures = {}
+      if (layer === 'shadesmar') {
+        newTextures = await this.textureManager.load({
+          shadesmar_map_bg: { lossy: true, compressedPixelFormat: RGB_S3TC_DXT1_Format },
+          shadesmar_map_text: { hqAvailable: true, localized: true }
+        })
+        Object.assign(this.textures, newTextures)
+
+        this.mapMaterial.uniforms.ShadesmarBgTexture.value = this.textures.shadesmar_map_bg
+        this.textPlane.material.uniforms.ShadesmarTexture.value = this.textures.shadesmar_map_text
+      } else if (layer === 'factions') {
+        newTextures = await this.textureManager.load({
+          factions: { hqAvailable: true, lossy: true }
+        })
+        Object.assign(this.textures, newTextures)
+
+        this.layers.factions.setTexture(this.textures.factions)
+      } else if (layer === 'oathgates') {
+        newTextures = await this.textureManager.load({
+          oathgates_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat }
+        })
+        Object.assign(this.textures, newTextures)
+
+        this.layers.oathgates.setTextures(this.textures)
+      } else if (layer === 'silverKingdoms') {
+        newTextures = await this.textureManager.load({
+          silver_kingdoms: { hqAvailable: true, pixelFormat: RedFormat },
+          silver_kingdoms_text: { hqAvailable: true, localized: true, pixelFormat: RedFormat }
+        })
+        Object.assign(this.textures, newTextures)
+
+        this.layers.silverKingdoms.setTextures(this.textures)
+      }
+    },
     async setupScene (textures) {
+      this.textures = textures
+      console.time('Map: setupScene')
       this.camera = markRaw(new PerspectiveCamera(
         60,
         window.innerWidth / window.innerHeight,
@@ -275,7 +322,7 @@ export default {
         uniforms: {
           BgTexture: { value: textures.map_bg },
           OutlineTexture: { value: textures.map },
-          ShadesmarBgTexture: { value: textures.shadesmar_map_bg },
+          ShadesmarBgTexture: { value: textures.map_bg }, // Placeholder
           TransitionTexture: { value: textures.transition },
           Transition: { value: 0 },
           PerpTransition: { value: 0 },
@@ -309,7 +356,7 @@ export default {
         fragmentShader: textFragmentShader,
         uniforms: {
           Texture: { value: textures.map_text },
-          ShadesmarTexture: { value: textures.shadesmar_map_text },
+          ShadesmarTexture: { value: textures.map_text }, // Placeholder
           PatternTexture: { value: textures.text_pattern },
           TransitionTexture: { value: textures.transition },
           Transition: { value: 0 },
@@ -336,9 +383,14 @@ export default {
       this.layers = {
         shadesmar: markRaw(new Shadesmar()),
         graticule: markRaw(new Graticule()),
-        silverKingdoms: markRaw(new SilverKingdoms(textures)),
-        oathgates: markRaw(new Oathgates(textures)),
-        factions: markRaw(new Factions(textures.factions))
+        silverKingdoms: markRaw(new SilverKingdoms({
+          silver_kingdoms: textures.transition,
+          silver_kingdoms_text: textures.transition
+        })),
+        oathgates: markRaw(new Oathgates({
+          oathgates_text: textures.transition
+        })),
+        factions: markRaw(new Factions(textures.map_text))
       }
       this.measurement = markRaw(new Measurement())
 
@@ -357,8 +409,11 @@ export default {
       this.composer.addPass(new RenderPass(this.scene, this.camera))
       this.shatteringPass = markRaw(new ShatteringPass())
       this.composer.addPass(this.shatteringPass)
-
-      this.hoverTexture = await this.textureManager.loadData('hover_text', false, true, false, 'gb')
+ 
+      this.textureManager.loadData('hover_text', false, true, false, 'gb').then((texture) => {
+         this.hoverTexture = texture
+      })
+      console.timeEnd('Map: setupScene')
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())
@@ -426,6 +481,9 @@ export default {
       this.controls.transitionTo(target, newPosition.zoom !== undefined ? newPosition.zoom : 0.7)
     },
     update (timestamp) {
+      if (this.firstRender) {
+        console.time('Map: First Render')
+      }
       if (this.stats) {
         this.stats.begin()
       }
@@ -485,6 +543,11 @@ export default {
       this.textPlane.material.uniforms.ActiveProgress.value = this.textActiveProgress
 
       this.composer.render(delta)
+
+      if (this.firstRender) {
+        console.timeEnd('Map: First Render')
+        this.firstRender = false
+      }
 
       this.lastTimestamp = timestamp
 
@@ -552,6 +615,10 @@ export default {
     },
     enterLayer (layer) {
       const layerData = this.layers[layer]
+
+      if (!this.loadedLayers[layer]) {
+        this.loadLayerAssets(layer)
+      }
 
       layerData.enter()
 
