@@ -21,6 +21,7 @@
 
 <script>
 import {
+  Color,
   Group,
   Mesh,
   NearestFilter,
@@ -411,7 +412,7 @@ export default {
       const target = new Vector3(newPosition.x - 512, 256 - newPosition.y, 0)
 
       if (event.hideMarker !== true) {
-        this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 2 : undefined))
+        this.highlights.add(new Highlight(target.x, target.y, event.specialEffect === 'shattering' ? 2 : undefined, undefined, this.getHighlightColor()))
       }
 
       if (event.perpendicularity) {
@@ -613,7 +614,26 @@ export default {
 
       return false
     },
-    
+    getHighlightColor () {
+      const lockedTag = this.store.filter.lockedTag
+      if (lockedTag === null) {
+        return undefined
+      }
+
+      const tagProps = this.store.mappings.tags[lockedTag]
+      if (tagProps && tagProps.color) {
+        const color = new Color(tagProps.color)
+        const hsl = {}
+        color.getHSL(hsl)
+        // Cap lightness to 20% if exceeded
+        if (hsl.l > 0.2) {
+          color.setHSL(hsl.h, hsl.s, 0.2)
+        }
+        return new Vector3(color.r, color.g, color.b)
+      }
+
+      return undefined
+    },
     updateCompassRotation () {
       // Get button
       if (this.compassBtn === undefined || !document.body.contains(this.compassBtn)) {
