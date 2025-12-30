@@ -9,7 +9,7 @@
       <Details v-if="details !== null" :key="details.id" :details="details" />
     </transition>
     <transition name="scrubber" duration="1500" @after-enter="onScrubberLoaded">
-      <Scrubber v-if="ready" />
+      <Scrubber v-if="ready" :settings-open="openedMenu === 'settings'" />
     </transition>
     <div class="app__actions">
       <Search :open="openedMenu === 'search' ? true : undefined" @open="openMenu('search')" @close="closeMenu" />
