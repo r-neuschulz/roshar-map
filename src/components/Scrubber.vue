@@ -229,6 +229,12 @@ export default {
     EventCard,
     Timeline
   },
+  props: {
+    settingsOpen: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup () {
     const store = useMainStore()
     const settings = useSettingsStore()
@@ -323,6 +329,11 @@ export default {
         }
       },
       deep: true
+    },
+    settingsOpen (value) {
+      if (value) {
+        this.separateVisible = false
+      }
     }
   },
   mounted () {
