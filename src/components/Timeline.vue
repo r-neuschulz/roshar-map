@@ -200,8 +200,8 @@ export default {
   &__event {
     position: absolute;
     font-size: 1rem;
-    width: 1em;
-    height: 1em;
+    width: 0;
+    height: 0;
     appearance: none;
     outline: none;
     padding: 0;
