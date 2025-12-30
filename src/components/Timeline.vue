@@ -5,15 +5,15 @@
       :style="{ [offsetStyle]: `${barOffset + offset}px`, ...(tag === 'all' ? { [endStyle]: 0 } : { width: `${width}px` }), ...barStyles }"
       :class="['timeline__bar', { 'timeline__bar--separate': tag !== 'all' }]"
     />
-      <template v-for="event in events" :key="event.id">
-        <button
-        :title="$t(`events.${event.id}.name`)"
-        :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
-        :style="{ [offsetStyle]: `${event.offset + offset}px` }"
-        :disabled="isDisabled(event)"
-        @click="$emit('event-selected', event)"
-      />
-    </template>
+    <button
+      v-for="event in events"
+      :key="event.id"
+      :title="$t(`events.${event.id}.name`)"
+      :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
+      :style="{ [offsetStyle]: `${event.offset + offset}px`, ...diamondStyles }"
+      :disabled="isDisabled(event)"
+      @click="$emit('event-selected', event)"
+    />
   </transition-group>
 </template>
 
@@ -63,6 +63,18 @@ export default {
       return {
         '--timeline-bar-color': parseColorToCssVar(props.color),
         '--timeline-bar-alpha': props.alpha
+      }
+    },
+    diamondStyles () {
+      const props = this.tagProperties[this.tag]
+
+      if (props === undefined) {
+        return undefined
+      }
+
+      // Just pass the base color - CSS handles the adjustments via oklch()
+      return {
+        '--diamond-color': props.color
       }
     },
     barOffset () {
@@ -197,23 +209,27 @@ export default {
       margin: 0 -0.5em 0 0;
     }
 
-    @mixin diamond($base-color) {
-      border-top-color: color.adjust($base-color, $lightness: 10%);
-      border-left-color: color.adjust(color.adjust($base-color, $lightness: 20%), $saturation: 10%);
-      border-bottom-color: color.adjust($base-color, $lightness: 15%);
-      border-right-color: $base-color;
-    }
+    // Default fallback color
+    --diamond-color: #9dc2ec;
 
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, font-size 0.2s ease-in-out, opacity 0.2s ease-in-out;
-    @include diamond(#9dc2ec);
-    box-shadow: 0 0 0 #21a5ec;
+
+    // Diamond facet colors using oklch relative color syntax
+    border-top-color: oklch(from var(--diamond-color) calc(l + 0.1) c h);
+    border-left-color: oklch(from var(--diamond-color) calc(l + 0.2) calc(c + 0.02) h);
+    border-bottom-color: oklch(from var(--diamond-color) calc(l + 0.15) c h);
+    border-right-color: var(--diamond-color);
+    box-shadow: 0 0 0 oklch(from var(--diamond-color) calc(l - 0.1) calc(c + 0.05) h);
 
     transform-origin: 50% 50%;
     transform: rotate(45deg);
 
     &--active:not(:disabled), &:not(:disabled):hover {
-      @include diamond(#bcd4ea);
-      box-shadow: 0 0 1em #61b8ef;
+      border-top-color: oklch(from var(--diamond-color) calc(l + 0.2) c h);
+      border-left-color: oklch(from var(--diamond-color) calc(l + 0.3) calc(c + 0.02) h);
+      border-bottom-color: oklch(from var(--diamond-color) calc(l + 0.25) c h);
+      border-right-color: oklch(from var(--diamond-color) calc(l + 0.1) c h);
+      box-shadow: 0 0 1em oklch(from var(--diamond-color) calc(l - 0.1) calc(c + 0.05) h);
       font-size: 1.1rem;
       cursor: pointer;
     }
@@ -231,7 +247,7 @@ export default {
       right: -0.5em;
       top: -0.5em;
       bottom: -0.5em;
-      box-shadow: inset 0 0 0.5em #21a5ec;
+      box-shadow: inset 0 0 0.5em oklch(from var(--diamond-color) calc(l - 0.1) calc(c + 0.05) h);
     }
 
     &-enter-active, &-leave-active {
