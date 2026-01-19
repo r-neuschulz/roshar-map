@@ -95,7 +95,7 @@
             :active-event="activeEvent"
             :excluded-by-lock="filter.lockedTag !== null && filter.lockedTag !== tag"
             class="scrubber__timeline"
-            @event-selected="selectEvent"
+            @event-selected="(event, tag) => selectEvent(event, tag)"
           />
           <div
             key="years"
@@ -528,8 +528,8 @@ export default {
 
       this.scrollTo(offset)
     },
-    selectEvent (event) {
-      this.store.selectEvent(event)
+    selectEvent (event, sourceTag = 'all') {
+      this.store.selectEvent(event, sourceTag)
       this.scrollToEvent(event)
     },
     scrollToEvent (event) {

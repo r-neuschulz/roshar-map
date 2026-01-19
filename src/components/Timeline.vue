@@ -16,7 +16,7 @@
       :class="['timeline__event', { 'timeline__event--active': activeEvent !== null && activeEvent.id === event.id }]"
       :style="{ [offsetStyle]: `${event.offset + offset}px`, ...diamondStyles }"
       :disabled="isDisabled(event)"
-      @click="$emit('event-selected', event)"
+      @click="$emit('event-selected', event, tag)"
     />
   </transition-group>
 </template>

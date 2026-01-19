@@ -230,6 +230,7 @@ export const useMainStore = defineStore('main', {
     locationsByMapId: markRaw(locationsByMapId),
     mappings: markRaw(mappings),
     activeEvent: null,
+    activeEventSourceTag: null,
     filter: {
       tags: [],
       separateTags: [],
@@ -275,9 +276,11 @@ export const useMainStore = defineStore('main', {
     /**
      * Selects an event.
      * @param {object} event - The event to select.
+     * @param {string} sourceTag - The tag/timeline from which the event was selected.
      */
-    selectEvent (event) {
+    selectEvent (event, sourceTag = 'all') {
       this.activeEvent = event
+      this.activeEventSourceTag = sourceTag
       window.localStorage.setItem('activeEvent', this.activeEvent.id)
     },
     /**
@@ -285,6 +288,7 @@ export const useMainStore = defineStore('main', {
      */
     unselectEvent () {
       this.activeEvent = null
+      this.activeEventSourceTag = null
       window.localStorage.setItem('activeEvent', '')
     },
     /**

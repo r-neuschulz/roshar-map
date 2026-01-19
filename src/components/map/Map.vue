@@ -619,24 +619,36 @@ export default {
       return false
     },
     getHighlightColor () {
+      // Priority 1: If a timeline is locked, use that color
       const lockedTag = this.store.filter.lockedTag
-      if (lockedTag === null) {
-        return undefined
-      }
-
-      const tagProps = this.store.mappings.tags[lockedTag]
-      if (tagProps && tagProps.color) {
-        const color = new Color(tagProps.color)
-        const hsl = {}
-        color.getHSL(hsl)
-        // Cap lightness to 20% if exceeded
-        if (hsl.l > 0.2) {
-          color.setHSL(hsl.h, hsl.s, 0.2)
+      if (lockedTag !== null) {
+        const tagProps = this.store.mappings.tags[lockedTag]
+        if (tagProps && tagProps.color) {
+          return this.processTagColor(tagProps.color)
         }
-        return new Vector3(color.r, color.g, color.b)
       }
 
+      // Priority 2: If clicked from a separated timeline (not 'all'), use that timeline's color
+      const sourceTag = this.store.activeEventSourceTag
+      if (sourceTag && sourceTag !== 'all') {
+        const tagProps = this.store.mappings.tags[sourceTag]
+        if (tagProps && tagProps.color) {
+          return this.processTagColor(tagProps.color)
+        }
+      }
+
+      // Priority 3: Use default color (main timeline or no separation)
       return undefined
+    },
+    processTagColor (hexColor) {
+      const color = new Color(hexColor)
+      const hsl = {}
+      color.getHSL(hsl)
+      // Cap lightness to 20% if exceeded
+      if (hsl.l > 0.2) {
+        color.setHSL(hsl.h, hsl.s, 0.2)
+      }
+      return new Vector3(color.r, color.g, color.b)
     },
     updateCompassRotation () {
       // Get button
