@@ -24,6 +24,7 @@
 
 <script>
 import {
+  DataTexture,
   Group,
   Mesh,
   NearestFilter,
@@ -38,7 +39,7 @@ import {
   Vector3,
   WebGLRenderer,
 
-  RGB_S3TC_DXT1_Format, RedFormat
+  RGB_S3TC_DXT1_Format, RedFormat, RGFormat
 } from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
@@ -331,6 +332,7 @@ export default {
         uniforms: {
           Texture: { value: textures.map_text },
           ShadesmarTexture: { value: textures.shadesmar_map_text },
+          HoverMapTexture: { value: null },
           PatternTexture: { value: textures.text_pattern },
           TransitionTexture: { value: textures.transition },
           Transition: { value: 0 },
@@ -380,6 +382,13 @@ export default {
       this.composer.addPass(this.shatteringPass)
 
       this.hoverTexture = await this.textureManager.loadData('hover_text', false, true, false, 'gb')
+      const { width, height, data } = this.hoverTexture
+      const hoverMapTexture = markRaw(new DataTexture(new Uint8Array(data), width, height, RGFormat))
+      hoverMapTexture.magFilter = NearestFilter
+      hoverMapTexture.minFilter = NearestFilter
+      hoverMapTexture.flipY = true
+      hoverMapTexture.needsUpdate = true
+      this.textPlane.material.uniforms.HoverMapTexture.value = hoverMapTexture
     },
     onEventChanged (event, oldEvent) {
       this.highlights.children.forEach(h => h.leave())

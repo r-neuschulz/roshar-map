@@ -10,6 +10,7 @@ export default `
 
   uniform highp sampler2D Texture;
   uniform highp sampler2D ShadesmarTexture;
+  uniform highp sampler2D HoverMapTexture;
   uniform highp sampler2D PatternTexture;
   uniform highp sampler2D TransitionTexture;
   uniform highp float Transition;
@@ -70,8 +71,9 @@ export default `
 
     highp vec4 map = texture2D(Texture, vUv);
     highp vec4 shadesmarMap = texture2D(ShadesmarTexture, vUv);
+    highp vec4 hoverMap = texture2D(HoverMapTexture, vUv);
 
-    highp float hoverValue = mix(map.b * 255., shadesmarMap.b * 255., max(sign(Transition - 0.5), 0.0));
+    highp float hoverValue = mix(hoverMap.g * 255., hoverMap.r * 255., max(sign(Transition - 0.5), 0.0));
     float highlight = sign(HoveredItem) * max(sign(1e-2 - abs(hoverValue - HoveredItem)), .0);
     float activeHighlight = sign(ActiveItem) * max(sign(1e-2 - abs(hoverValue - ActiveItem)), .0);
     highlight = min(highlight + activeHighlight, 1.);
